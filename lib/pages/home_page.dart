@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           child: ListView(
         children: <Widget>[
           DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blue),
+            decoration: BoxDecoration(color: Colors.deepOrange),
             child: Padding(
               padding: EdgeInsets.all(5),
               child: Column(
