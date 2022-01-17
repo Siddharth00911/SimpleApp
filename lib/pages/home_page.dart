@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/login_page.dart';
+import 'package:flutter_application_1/uti/routes.dart';
 // ignore_for_file: prefer_const_constructors
 
 class HomePage extends StatelessWidget {
@@ -9,9 +9,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dashboard"),
+        title: Center(child: Text("Dashboard")),
       ),
-      body: Center(child: Row()),
+      body: SingleChildScrollView(child: Center(child: Row())),
       drawer: Drawer(
           child: ListView(
         children: <Widget>[
@@ -36,61 +36,47 @@ class HomePage extends StatelessWidget {
             // .tr(),
             trailing: Icon(Icons.edit),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginPage()));
-              //Navigator.of(context).pushNamed(MyAccount.routeName);
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.message),
-            title: Text('Message'),
-            // .tr(),
-            //.tr(),
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginPage()));
-              //Navigator.of(context).pushNamed(MyAccount.routeName);
+              Navigator.pushNamed(context, MyRoutes.myaccountRoute);
             },
           ),
           ListTile(
             leading: Icon(Icons.language_sharp),
             title: Text('Change Language'),
             // .tr(),
-            //.tr(),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginPage()));
-              //Navigator.of(context).pushNamed(MyAccount.routeName);
+              Navigator.pushNamed(context, MyRoutes.languageRoute);
             },
           ),
           ListTile(
             leading: Icon(Icons.contact_support),
             title: Text('Contact Us'),
             // .tr(),
-            //.tr(),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginPage()));
+              Navigator.pushNamed(context, MyRoutes.contactRoute);
             },
           ),
           ListTile(
             leading: Icon(Icons.policy_outlined),
             title: Text('Legal Policy'),
             // .tr(),
-            //.tr(),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginPage()));
+              Navigator.pushNamed(context, MyRoutes.policyRoute);
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.share),
+            title: Text('Share'),
+            // .tr(),
+            onTap: () {
+              Navigator.pushNamed(context, MyRoutes.shareRoute);
             },
           ),
           ListTile(
             leading: Icon(Icons.logout),
             title: Text('Logout'),
             // .tr(),
-            //.tr(),
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => LoginPage()));
+              Navigator.pushNamed(context, MyRoutes.loginRoute);
             },
           ),
         ],
