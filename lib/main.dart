@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/contact.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
@@ -10,7 +11,9 @@ import 'package:flutter_application_1/uti/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 // ignore_for_file: prefer_const_constructors
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
